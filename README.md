@@ -1,5 +1,5 @@
 # buzzfeed
-A snarky buzzfeed headline generator.
+A fork of the snarky buzzfeed headline generator.
 
 
 ## API
