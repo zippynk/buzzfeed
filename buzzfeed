@@ -3,40 +3,34 @@
 import random
 import string
 
-
-def word():
-    return random.choice(['dogs', 'old people', 'shoes','tumblr users', 'smart people', 'disney movies', 'celebrities', 'little kids', 'disney princesses', 'villains', 'classic movies', 'tv shows'])
-
-def believe():
-	return 
-
-def punc():
-	return random.choice(['.', '!', ''])
-
 def reasons():
-    s = str(num) + ' reasons why'
-    s += ' ' + word() + ' '
-    s += 'are ' + random.choice(['annoying', 'horrible', 'awesome', 'insane', 'superlative', 'funny', 'wrong', 'right', 'the worst', 'the best'])
-    s += punc()
+    s = ' reasons why'
+    s += ' ' + random.choice(['dogs', 'people', random.choice(['my ', '']) + 'shoes', random.choice(['other ', '']) +'tumblr users', 'smart people', 'disney movies', 'super bowl snacks', 'gifts', 'demonstrators', 'books', 'valentines', 'touchdowns', 'puppies', 'actors', 'actresses', 'cars', 'horoscopes']) + ' '
+    s += 'are ' + random.choice(['annoying', 'horrible', 'awesome', 'insane', 'superlative', 'funny', 'wrong', 'right'])
+    return s
+def humanity():
+    num = random.randint(3,60)
+    s = 'These ' +str(num) +' '  +random.choice(['dogs', 'people', random.choice(['of my ', '']) + 'shoes', random.choice(['other ', '']) +'tumblr users', 'smart people', 'disney movies', 'super bowl snacks', 'gifts', 'demonstrators', 'books', 'valentines', 'touchdowns', 'puppies', 'actors', 'actresses', 'cars', 'horoscopes']) + ' will restore your faith in humanity' + random.choice(['', ' (You Won\'t Believe Number ' + str(random.randint(1, num)) + '!)'])
+    return s
+def cry():
+    num = random.randint(3,60)
+    s = 'These ' +str(num) +' '  +random.choice(['dogs', 'people', random.choice(['of my ', '']) + 'shoes', random.choice(['other ', '']) +'tumblr users', 'smart people', 'disney movies', 'super bowl snacks', 'gifts', 'demonstrators', 'books', 'valentines', 'touchdowns', 'puppies', 'actors', 'actresses', 'cars', 'horoscopes']) + ' will make you cry' + random.choice(['', ' (You Won\'t Believe Number ' + str(random.randint(1, num)) + '!)'])
+    return s
+def mostAbout():
+    num = random.randint(3,60)
+    s = 'The ' +str(num) +random.choice([random.choice([' best',' worst']), random.choice([' most annoying', ' most horrible', ' most awesome', ' most insane', ' funniest', ' wrongest', ' rightest'])]) + ' things about ' + random.choice(['dogs', 'people', random.choice(['my ', '']) + 'shoes', random.choice(['other ', '']) +'tumblr users', 'smart people', 'disney movies', 'super bowl snacks', 'gifts', 'demonstrators', 'books', 'valentines', 'touchdowns', 'puppies', 'actors', 'actresses', 'cars', 'horoscopes']) + random.choice(['', ' (You Won\'t Believe Number ' + str(random.randint(1, num)) + '!)'])
     return s
 
-def humanity():
-    return 'These ' + str(num) + ' ' + word() + ' will restore your faith in humanity' + punc()
-
-def tears():
-	return 'These ' + str(num) + ' ' + word() + ' will ' + random.choice(['make you cry', 'bring you to tears']) + punc() 
-
-def quiz():
-	return "QUIZ! Which one of these " + str(num) + " " + word() + " describes " + random.choice(['you', 'your friends', 'your social life', 'your family', 'your parents', 'your music taste']) + '?'
-
-
-d = {1:reasons, 2:humanity, 3:tears, 4:quiz}
-
-num = random.randint(2,60)
-pick = random.randint(1,len(d.keys()))
-final = ''
-final =  d[pick]()
-final = string.capwords(final)
-if pick != 4 and pick != 3:
-	final += random.choice([' (You Won\'t Believe Number ' + str(random.randint(1, num-1)) + '!)'])
+thing = random.randint(2,5)
+if thing == 5:
+    final = humanity()
+elif thing == 4:
+    final = cry()
+elif thing == 3:
+    final = mostAbout()
+else:
+    num = random.randint(2,60)
+    final = ''
+    final = str(num) + reasons() + random.choice(['.', '!', '', ])
+    final = string.capwords(final) + random.choice(['', ' (You Won\'t Believe Number ' + str(random.randint(1, num)) + '!)'])
 print final
