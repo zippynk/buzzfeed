@@ -1,5 +1,7 @@
 #! /usr/bin/python
 
+print "THIS IS AN OLD THING DON'T USE IT YOU WERE PROBABLY LOOKING FOR https://github.com/technoboy10/buzzfeed OR https://github.com/zippynk/buzzfeed/tree/patch-1"
+
 import random
 import string
 
